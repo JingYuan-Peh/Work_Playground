@@ -5,3 +5,4 @@ python-dotenv
 langchain-groq
 langchain-tavily
 google-genai
+pymongo[srv]==3.12

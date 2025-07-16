@@ -13,5 +13,6 @@ dependencies = [
     "langchain-tavily>=0.2.7",
     "langgraph>=0.5.3",
     "langsmith>=0.4.5",
+    "pymongo[srv]==3.12",
     "python-dotenv>=1.1.1",
 ]
