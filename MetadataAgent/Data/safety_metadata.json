@@ -1,0 +1,79 @@
+{
+  "database": "airspace",
+  "collection": "metadata_full",
+  "table": "safety",
+  "description": "Each record represents a single safety incident reported for aircraft operations, including failure parts, incident nature, precautionary actions, and contextual metadata such as date, location, and airline group/unit responsible.",
+  "constraints": {
+    "primary_key": ["report_id"],
+    "foreign_keys": []
+  },
+  "columns": [
+    {
+      "name": "date",
+      "type": "DATE",
+      "description": "Date of the incident in YYYY-MM-DD format. Range: 2020-01-01 to 2020-12-31.",
+      "examples": ["2020-01-15", "2020-06-30", "2020-11-05"],
+      "query_hint": "Useful for filtering incidents by time period or aggregating counts over days, months, or quarters."
+    },
+    {
+      "name": "report",
+      "type": "TEXT",
+      "description": "A textual summary describing the incident details.",
+      "examples": [
+        "ENGINE FAILURE DURING TAKEOFF, FUEL LEAK DETECTED",
+        "FUSELAGE CRACKED, EMERGENCY LIGHTS INOPERATIVE",
+        "ZONE 100 CORRODED, UNSCHED LANDING REQUIRED"
+      ],
+      "query_hint": "Use LIKE or full-text search for keywords (e.g., 'ENGINE', 'FUEL')."
+    },
+    {
+      "name": "part_failure",
+      "type": "VARCHAR",
+      "description": "Specific part or system that failed during the incident.",
+      "examples": ["FUSELAGE CRACKED", "ZONE 100 CORRODED", "EMERGENCY LIGHTS INOPERATIVE"],
+      "query_hint": "Can be used to group or filter incidents by specific failure types (e.g., WHERE part_failure LIKE '%ZONE%')."
+    },
+    {
+      "name": "occurence_nature_condition",
+      "type": "VARCHAR",
+      "description": "Describes the nature or condition of the incident occurrence, representing the type or symptoms observed.",
+      "examples": ["OTHER", "WARNING INDICATION","NO TEST","SMOKE/FUMES/ODORS/SPARKS","FALSE WARNING","FLUID LOSS","FLT CONT AFFECTED"],
+      "query_hint": "Useful for categorizing incidents by severity or symptomatology."
+    },
+    {
+      "name": "occurence_precautionary_procedures",
+      "type": "VARCHAR",
+      "description": "Records any precautionary or emergency procedures taken in response to the incident.",
+      "examples": ["UNSCHED LANDING","ABORTED TAKEOFF","RETURN TO BLOCK","EMER. DESCENT","ENGINE SHUTDOWN","ABORTED APPROACH","DEACTIVATE SYST/CIRCUITS"],
+      "query_hint": "Useful to assess safety responses and actions triggered by incidents."
+    },
+    {
+      "name": "location",
+      "type": "VARCHAR",
+      "description": "The country where the incident took place.",
+      "examples": ["Singapore", "Australia", "France", "Thailand", "Brunei", "United State"],
+      "query_hint": "Examples showns are the only valid locations in the database. Do not use args other than those"
+    },
+    {
+      "name": "airline_group",
+      "type": "VARCHAR",
+      "description": "The airline group or company responsible for the aircraft.",
+      "examples": ["SkyHigh Airways", "AeroExpress", "Pacific Aero", "NimbusJet"],
+      "query_hint": "Examples showns are the only valid airline group in the database. Do not use args other than those"
+    },
+    {
+      "name": "unit",
+      "type": "VARCHAR",
+      "description": "Specific operational unit within the airline group accountable for the aircraft or incident. Each unit belongs uniquely to one group.",
+      "examples": ["SH Operations - East", "SH Fleet A", "AE Regional Hub 1","AE Long Haul Division", "PA Crew Team Alpha","PA Engineering", "NJ International Ops", "NJ Domestic Base","SH Flight Ops HQ","AE Maintenance Unit","PA Ops Central","NJ Line Services"],
+      "query_hint": "Examples showns are the only valid airline group in the database.  Do not use args other than those"
+    },
+    {
+      "name": "aircraft_type",
+      "type": "VARCHAR",
+      "description": "the type of aircraft involved in the safety incident",
+      "examples": ["Airbus","Boeing","Hawker","Bombardier","Douglas","Fokker","Gulfstream","Hercules","Cessna","Convair","Embraer", "Avro"],
+      "query_hint": "Examples showns are the only valid aircraft type in the database.  Do not use args other than those"
+    }
+]
+}

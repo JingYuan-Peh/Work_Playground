@@ -1,0 +1,32 @@
+To add in metadata (https://verticalserve.medium.com/genai-storing-tables-metadata-for-query-generation-693f8bf04741):
+PK, FK into metadata. This will show how tables talk to one another
+Exclude collection name for now. Treat DB as one and throw everything into same collection. DB=domain, collection=sub_domain
+
+Research:
+Research on the approaches for chunking metadata vs storing full metadata. Currently, just use full metadata stored with JSON format.
+Right now, reading a few rows as sample data to generate metadata. To improve on it, should read the full table to perform aggregation to find primary keys.
+
+Immediate actions:
+need to create a tool to pull information from DB catalog.
+Should be iterative?
+
+
+
+
+Prompt:
+Give me a metadata query prompt to put in metadata query LLM agent. It should be able to answer users' queries on metadata in terms of providing information about the databases, tables and columns. Below are some examples of users' queries.
+
+Example 1:
+User's query: "I want to know the incidents for different aircraft over the years"
+
+The LLM should be able to inform user that in the metadata database, there is a safety table that contains all the incidents for the past few years. In this safety table, the report column contains descriptive information of each incident, as well as other columns which can value-add to the user's analysis. The LLM should also inform user that there is an aircraft table which contains information such as the aircraft types, manufacturer, models etc. The LLM should also inform user that the safety table can associate with the aircraft table using aircraft_type column.
+
+User can follow up next query: "Can i incorporate weather data?"
+
+The LLM should be able to inform user that weather table does exist in the database. It should also suggest to user that the dates of weather data can associate with the dates of safety data so users can understand what is the weather condition during the incident.
+
+
+Example 2:
+"I want to know the road incidents over the years in Singapore"
+
+The LLM should be able to inform user that in the metadata database, we do not have such metadata. It means the database does not keep such data to allow users to analyze the road incidents over the years in Singapore.

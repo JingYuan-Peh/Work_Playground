@@ -1,0 +1,13 @@
+aircraft_type,manufacturer,typical_role,seating_capacity,max_range_(km),first_flight_year,aircraft_class,cargo_capacity_(kg),notable_models
+Airbus,Airbus SE,Commercial Cargo,100-850,4000-15000,1972,"Wide-body, Narrow-body",10000-80000,"A320, A330, A380"
+Boeing,Boeing,Commercial Cargo,40-850,3000-15000,1958,"Wide-body, Narrow-body",10000-60000,"737, 747, 787"
+Embraer,Embraer,Regional Commercial,30-120,1200-4500,1969,"Regional, Narrow-body",3000-20000,"E175, E190, E195"
+Cessna,Textron Aviation,General Aviation,1-8,800-3200,1927,Light Aircraft,500-1000,"Cessna 172, Cessna 208"
+Gulfstream,Gulfstream Aerospace,Business Jet,4-19,6000-12000,1958,Business Jet,2000-5000,"G650, G550, G280"
+Hawker,Hawker Beechcraft,Business Jet,4-10,2400-5000,1962,Business Jet,1500-3000,"Hawker 800, Hawker 4000"
+Avro,Avro,Commercial,30-70,500-2000,1955,"Regional, Narrow-body",1000-10000,"Avro RJ100, Avro RJ85"
+Bombardier,Bombardier Aerospace,Commercial Business,10-100,1500-5000,1986,"Regional, Business",3000-25000,"CRJ, Global Express"
+Douglas,McDonnell Douglas,Commercial Military,50-300,3000-7500,1947,"Wide-body, Narrow-body",5000-50000,"DC-9, DC-10, MD-80"
+Convair,Convair,Military Commercial,40-150,2000-5000,1943,"Wide-body, Narrow-body",3000-15000,"Convair 880, Convair 990"
+Fokker,Fokker,Commercial Regional,30-150,500-2500,1912,"Regional, Narrow-body",1000-10000,"Fokker 100, Fokker 50"
+Hercules,Lockheed Martin,Military Transport,50+,2000-4000,1954,Military Cargo,20000-75000,"C-130, C-130J"

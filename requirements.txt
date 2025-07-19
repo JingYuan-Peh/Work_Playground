@@ -6,3 +6,8 @@ langchain-groq
 langchain-tavily
 google-genai
 pymongo[srv]==3.12
+pandas
+vertexai
+openai
+langchain_openai
+langchain_google_genai
