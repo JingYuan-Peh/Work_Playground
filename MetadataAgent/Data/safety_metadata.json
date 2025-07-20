@@ -1,6 +1,5 @@
 {
-  "database": "airspace",
-  "collection": "metadata_full",
+  "database": "Air",
   "table": "safety",
   "description": "Each record represents a single safety incident reported for aircraft operations, including failure parts, incident nature, precautionary actions, and contextual metadata such as date, location, and airline group/unit responsible.",
   "constraints": {

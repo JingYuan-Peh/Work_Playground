@@ -8,7 +8,15 @@ Right now, reading a few rows as sample data to generate metadata. To improve on
 
 Immediate actions:
 need to create a tool to pull information from DB catalog.
-Should be iterative?
+To identify primary key, foreign key, it needs to be more explicit. Need to consider break down into columns, retrieve them and match against uploaded data.
+Metadata Generator steps:
+1. Load sample data. Read the columns, data etc.
+2 LLM tool. Load all metadata to the prompt.
+3 Matching tool. Load all columns existing in metadata. See if there are any matches to primary keys, these can be potential foreign keys. (Need to mock primary keys in existing metadata here)
+4. Return results. Allow user to confirm if the metadata is valid? Concern is that it is in JSON format, users may not understand
+
+
+
 
 
 
